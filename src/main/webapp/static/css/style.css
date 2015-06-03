@@ -1,0 +1,303 @@
+@import url(reset.css);
+
+html {
+	height: 100%;
+}
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+#header {
+	width: 100%;
+	background-color: black;
+}
+#header img {
+	margin-left: 10%;
+	height: 4vw;
+	width: auto;
+}
+
+#user_resources {
+	border-collapse: collapse;
+	width: 50%;
+	margin: 2% auto 0 auto;
+}
+#user_resources thead, #user_resources tbody {
+	width: 100%;
+}
+#user_resources thead tr, #user_resources tbody tr {
+	height: 30px;
+}
+#user_resources tbody tr td:nth-child(2) {
+	color: #E30B5D;
+}
+#user_resources thead tr  th {
+	font-weight: bold;
+}
+#user_resources thead tr  th, #user_resources tbody tr td {
+	border-bottom: 1px solid #EEE;
+	text-align: left;
+	height: inherit;
+}
+#user_resources th:nth-child(1), #user_resources td:nth-child(1) {
+	width: 10%;
+}
+#user_resources th:nth-child(2), #user_resources td:nth-child(2) {
+	width: 30%;
+}
+#user_resources th:nth-child(3), #user_resources td:nth-child(3) {
+	width: 25%;
+}
+#user_resources th:nth-child(4), #user_resources td:nth-child(4) {
+	width: 25%;
+}
+#user_resources th:nth-child(5), #user_resources td:nth-child(5) {
+	width: 10%;
+}
+#user_resources tbody tr td img {
+	height: 80%;
+	width: auto;
+	vertical-align: middle;
+}
+#user_resources tbody tr td .actionmenu {
+    display: none;
+    height: inherit;
+}
+#user_resources tbody tr td .actionmenu img {
+	height: 80%;
+	width: auto;
+	margin: 0 2%;
+	z-index: 20;
+}
+#user_resources tbody tr td .actionmenu img:hover {
+	height: 100%;
+}
+.folder td:nth-child(2), .file td:nth-child(2) {
+    text-decoration: none;
+}
+.folder td:nth-child(2):hover, .file  td:nth-child(2):hover {
+    text-decoration: underline;
+	cursor: pointer;
+}
+
+#user_resource_actions {
+	height: 500px;
+}
+#right_click_actions, #user_resource_actions {
+	display: none;
+	width: 300px;
+	height: 300px;
+}
+#right_click_actions ul , #user_resource_actions ul {
+	padding: 10px;
+	list-style: none;
+	background: #fff;
+	color: #333;
+	box-shadow: 0 0 5px #999;
+	border-radius: 5px;
+}
+#right_click_actions ul li , #user_resource_actions ul li {
+	padding: 10px;
+	border-bottom: solid 1px #ccc;
+	vertical-align: middle;
+	cursor: pointer;
+}
+#right_click_actions ul li p, #user_resource_actions ul li p {
+	display: inline-block;
+	height: 26px;
+	line-height: 26px;
+	vertical-align: top;
+}
+#right_click_actions ul li:hover, #user_resource_actions ul li:hover {
+	background: #E30B5D;
+	color: #fff;
+}
+#right_click_actions ul li:last-child, #user_resource_actions ul li:last-child {
+	border: none;
+}
+#right_click_actions ul li img, #user_resource_actions ul li img {
+	margin-right: 20px;
+}
+
+
+
+#cover {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    z-index: 40;
+    top: 0;
+    left: 0;
+}
+#ajax_loader {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -16px;
+	margin-left: -16px;
+}
+
+#down, #image {
+	position: fixed;
+	right: -100px;
+}
+#upload_file {
+	display: none;
+}
+#name_folder, #name_file, #rename_resource, #move_to_resource, #copy_to_resource {
+	width: 300px;
+	height: 180px;
+    display: none;
+    background-color: #FFFFFF;
+    position: fixed;
+    z-index: 50;
+    top: 40%;
+    left: 40%;
+    padding: 0;
+    box-shadow: 0 0 5px #999;
+	border-radius: 5px;
+}
+#move_to_resource, #copy_to_resource {
+	height: 500px;
+    background-color: #FFF;
+	top: 25%;
+}
+#move_to_resource ul, #copy_to_resource ul {
+	list-style: none;
+	color: #333;
+	width: 85%;
+	height: 370px;
+	margin: 0 auto;
+	overflow-y: auto;
+}
+#move_to_resource ul li, #copy_to_resource ul li {
+	padding: 4px;
+	border-bottom: 1px solid black;
+}
+#move_to_resource ul li:last-child, #copy_to_resource ul li:last-child {
+	border: none;
+}
+#move_to_resource ul li  p, #copy_to_resource ul li p {
+	display: inline-block;
+	height: 26px;
+	line-height: 26px;
+	vertical-align: top;
+	padding-left: 10px;
+}
+#move_to_resource ul li:hover, #copy_to_resource ul li:hover {
+	cursor: pointer;
+}
+#move_to_resource ul li.marked, #copy_to_resource ul li.marked {
+	background: #E30B5D;
+	color: #fff;
+}
+
+#upload_file img {
+	position: relative;
+	top: 2%;
+	right: 2%;
+}
+
+#name_folder .header, #name_file .header, #rename_resource .header, #move_to_resource .header, #copy_to_resource .header {
+    margin: 7% 0 8% 10%;
+    font-size: 26px;
+    font-weight: bold;
+}
+#name_folder input[name=given_name], #name_file input[name=given_name], #rename_resource input[name=given_name] {
+	width: 240px;
+	margin: 0 0 4% 10%;
+	font-size: 14px;
+}
+#name_folder input[type='button'], #name_file input[type='button'], #rename_resource input[type='button'], #move_to_resource input[type='button'], #copy_to_resource input[type='button'] {
+    background: #428BCA;
+    color: #fff;
+    display: inline-block;
+    margin: 5% 0 0 6%;
+    width: 27%;
+    height: 1.7vw;
+    text-align: center;
+    font-size: 1.1vw;
+    letter-spacing: 0.06vw;
+    padding: 0;
+    transition: all 0.3s ease 0s;
+}
+#name_folder input[name=cancel], #name_file input[name=cancel], #rename_resource input[name=cancel], #move_to_resource input[name=cancel], #copy_to_resource input[name=cancel] {
+    margin: 5% 0 0 30%;
+}
+#name_folder input[type='button']:hover, #name_file input[type='button']:hover, #rename_resource input[type='button']:hover, #move_to_resource input[type='button']:hover, #copy_to_resource input[type='button']:hover {
+    box-shadow: 0 0 0 1px #3071A9;
+}
+
+
+
+
+
+#pop_up {
+	display:none; 
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 45px;
+}
+#pop_up div {
+	width: 30%;
+	height: 100%;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: black;
+	border-radius: 10px 10px 0px 0px;
+}
+#pop_up div p {
+	background-color: white;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	height: 80%;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 18px;
+}
+
+
+#edit_file_page {
+	background-color: AliceBlue;
+}
+
+#hidden_url {
+	display: none;
+}
+
+#file_content {
+	margin-left: auto;
+	margin-right: auto;
+	width: 794px;
+	height: auto;
+	margin-top: 20px;
+}
+#file_content .wrapper {
+	box-shadow: 0 0 1px black;
+	background-color: white;
+	width: 794px;
+	height: 1123px;
+	margin-bottom: 20px;
+}
+#file_content .wrapper .page {
+	font-size: 14px;
+	font-family: Consolas, monaco, monospace;
+	line-height: 20px;
+	height: 940px;
+	resize: none;
+	overflow: hidden;
+	margin: 94px;
+	border: none;
+}

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title> User </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link rel="stylesheet" type="text/css" href="../static/css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../static/css/jquery.fancybox.css?v=2.1.5" media="screen"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="../static/js/history-navigation.js"></script>
+		<script src="../static/js/user-resources.js"></script>
+        <script src="../static/js/milton-ajax-propfind.js"></script>
+		<script src="../static/js/milton-ajax-delete.js"></script>
+		<script src="../static/js/milton-ajax-put.js"></script>
+		<script src="../static/js/milton-ajax-move.js"></script>
+		<script src="../static/js/milton-ajax-copy.js"></script>
+		<script src="../static/js/milton-ajax-mkcol.js"></script>
+		<script src="../static/js/action-menu.js"></script>
+		<script src="../static/js/right-click-actions.js"></script>
+		<script src="../static/js/jquery.fancybox.pack.js?v=2.1.5"></script>
+		<script src="../static/js/fancybox-settings.js"></script>
+    </head>
+    <body>
+		<div id="cover"></div>
+		<div id="user_resource_actions">
+			<ul>
+				<li id="rename"><img src="../static/icons/rename.png"/><p>Rename</p></li>
+				<li id="move_to"><img src="../static/icons/folder.png"/><p>Move To</p></li>
+				<li id="copy_resource"><img src="../static/icons/copy.png"/><p>Copy</p></li>
+				<li id="download_file"><img src="../static/icons/download.png"/><p>Download</p></li>
+				<li id="delete_resource"><img src="../static/icons/trash.png"/><p>Delete</p></li>
+			</ul>
+		</div>
+		<div id="rename_resource">
+			<p class="header">Rename object</p>
+			<input type="text" name="given_name"/>
+			<input type="button" name="cancel" value="Cancel"/>
+			<input type="button" name="commit" value="Ok"/>
+		</div>
+		<div id="move_to_resource">
+			<p class="header">Move object to</p>
+			<ul>
+			</ul>
+			<input type="button" name="cancel" value="Cancel"/>
+			<input type="button" name="commit" value="Ok"/>
+		</div>
+		<div id="copy_to_resource">
+			<p class="header">Copy object to</p>
+			<ul>
+			</ul>
+			<input type="button" name="cancel" value="Cancel"/>
+			<input type="button" name="commit" value="Ok"/>
+		</div>
+		<div id="right_click_actions">
+			<ul>
+				<li id="new_folder"><img src="../static/icons/add_folder.png"/><p>New folder</p></li>
+				<li id="new_file"><img src="../static/icons/add_file.png"/><p>New file</p></li>
+				<li id="upload"><img src="../static/icons/upload.png"/><p>Upload file</p></li>
+			</ul>
+		</div>
+		<div id="name_folder">
+			<p class="header">Name folder</p>
+			<input type="text" name="given_name" value="New Folder"/>
+			<input type="button" name="cancel" value="Cancel"/>
+			<input type="button" name="create" value="Create"/>
+		</div>
+		<div id="name_file">
+			<p class="header">Name file</p>
+			<input type="text" name="given_name" value="New Text Document.txt"/>
+			<input type="button" name="cancel" value="Cancel"/>
+			<input type="button" name="create" value="Create"/>
+		</div>
+		<div id="upload_file">
+			<form action="" method="post" enctype="multipart/form-data">
+				<input type="hidden" name="MAX_FILE_SIZE" value="41943040"/> 
+				<input type="file" name="upload" multiple="true" accept="text/plain, image/jpg, image/jpeg, image/png, application/pdf"/>
+				<input type="submit" name="submit"/>
+			</form>
+		</div>
+		<div id="ajax_loader"><img src="../static/icons/ajax-loader.gif"/></div>
+		<div id="header"><img src="../static/icons/sb-logo.png"/></div>
+		<table id="user_resources">
+			<thead>
+				<tr>
+					<th></th>
+					<th>Name</th>
+					<th>Last modified</th>
+					<th>Size</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+		<div id="pop_up"><div><p></p></div></div>
+		<p id="down"><a href="" rel="nofollow" download="">Download</a></p>
+		<p id="image"><a id="fancybox-image" class="fancybox" rel="group_image" href=""></a></p>
+		<iframe id="pdf_frame" src="" height="0" width="0"></iframe>
+	</body>
+</html>

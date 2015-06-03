@@ -1,0 +1,22 @@
+    /*require_once("http://localhost:8080/templates/change_queues.php")
+	header('Content-Type: application/json');
+	
+	if ($_POST["user"] === "user1") {
+		if ($_POST["type"] === "get") {
+			echo ChangeQueues::get_user1();
+		} elseif ($_POST["type"] === "post") {
+			ChangeQueues::post_user1(array("page" => $_POST["page"], "text" => $_POST["text"]));
+			echo json_encode ("success");
+		}
+	} elseif ($_POST["user"] === "user2") {
+		if ($_POST["type"] === "get") {
+			echo ChangeQueues::get_user2();
+		} elseif ($_POST["type"] === "post") {
+			ChangeQueues::post_user2(array("page" => $_POST["page"], "text" => $_POST["text"]));
+			echo json_encode ("success");
+		}
+	}
+	
+	echo json_encode ("fail");*/
+	
+	!-- <?php include 'http://localhost:8080/templates/edit_handler.php'; echo $text; ?> -->
